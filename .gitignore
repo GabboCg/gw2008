@@ -4,9 +4,6 @@
 .Ruserdata
 *.Rproj.user/
 
-# Output
-*.pdf
-
 # macOS
 .DS_Store
 
