@@ -1,6 +1,6 @@
 # Goyal-Welch (2008, RFS) Replication
 
-Replication of the DP figure from Goyal & Welch (2008, RFS) paper in an XKCD style
+Replication of the DP figure from Goyal & Welch (2008, RFS) paper in an XKCD style.
 
 ## Overview 
 
