@@ -4,7 +4,7 @@ Replication of the main figure from Goyal & Welch (2008, RFS)
 
 The figure plots the **cumulative sum-of-squared-errors (SSE) difference** between the prevailing mean model and the conditional D/P model, both in-sample (IS) and out-of-sample (OOS). When the line is above zero, the conditional model (using lagged dividend-to-price ratio) predicts the equity premium better than the historical mean; below zero, the mean wins.
 
-![Goyal-Welch cumulative SSE difference](fig/gwdp.pdf)
+The plot is rendered in an **XKCD-style** using a custom `ggplot2` theme (`R/xkcd.R`) with the Humor Sans font, replicating the hand-drawn aesthetic popularized by the [xkcd](https://xkcd.com) webcomic.
 
 The in-sample fit (IS, black) shows modest but consistent improvement from using D/P — adjusted R² of −0.2% and a t-stat of 0.88. Out-of-sample (OOS, blue), the conditional model mostly underperforms the prevailing mean, with a brief exception around the 1973–74 oil shock. The second dashed reference line marks the OOS level at the start of the post-oil-shock period.
 
