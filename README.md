@@ -1,6 +1,8 @@
-# Goyal-Welch (2008) Replication
+# Goyal-Welch (2008, RFS) Replication
 
-Replication of the main figure from Goyal & Welch (2008, RFS)
+Replication of the DP figure from Goyal & Welch (2008, RFS) paper in an XKCD style
+
+## Overview 
 
 The figure plots the **cumulative sum-of-squared-errors (SSE) difference** between the prevailing mean model and the conditional D/P model, both in-sample (IS) and out-of-sample (OOS). When the line is above zero, the conditional model (using lagged dividend-to-price ratio) predicts the equity premium better than the historical mean; below zero, the mean wins.
 
