@@ -1,0 +1,14 @@
+# R
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj.user/
+
+# Output
+*.pdf
+
+# macOS
+.DS_Store
+
+# Docs
+README.md
