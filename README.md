@@ -25,7 +25,7 @@ fig/            # output figures
 
 ## Usage
 
-**One-time font setup** (requires [Humor Sans](https://github.com/shreyankg/xkcd-desktop/blob/master/Humor-Sans.ttf)):
+One-time font setup (requires [Humor Sans](https://github.com/shreyankg/xkcd-desktop/blob/master/Humor-Sans.ttf)):
 
 ```r
 library(extrafont)
