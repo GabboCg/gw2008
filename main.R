@@ -60,8 +60,8 @@ for (i in firstyear:nrow(ds)) {
     oos_meanresid[i + 1] <- ds$logeqp[i + 1] - oos_meanpred
 
     oos_lmcoef <- coef(lm(logeqp ~ lagdp, data = ds[1:i,]))
-    oos_pred <- oos_lmcoef[1] + oos_lmcoef[2] * ds$lagdp[i+1]
-    oos_xyresid[i + 1] <- ds$logeqp[i+1] - oos_pred
+    oos_pred <- oos_lmcoef[1] + oos_lmcoef[2] * ds$lagdp[i + 1]
+    oos_xyresid[i + 1] <- ds$logeqp[i + 1] - oos_pred
     
 }
 
@@ -77,7 +77,7 @@ plotwork <- data.frame(
 # done
 rm(ds)  
 
-plotwork[firstyear,] <- c(plotwork$yyyy[firstyear - 1] + 1, 0, 0, 0, 0 )
+plotwork[firstyear,] <- c(plotwork$yyyy[firstyear - 1] + 1, 0, 0, 0, 0)
 
 plotwork <- plotwork[complete.cases(plotwork),]
 rownames(plotwork) <- NULL
@@ -157,4 +157,4 @@ plotlong |>
   theme_xkcd
 
 # Save figures
-ggsave("fig/gwdp.pdf", width = 7.25, height = 5, device = cairo_pdf)
+ggsave("figures/gwdp.pdf", width = 7.25, height = 5, device = cairo_pdf)
