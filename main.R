@@ -14,11 +14,11 @@
 # email: gabriel.cabreraguzman@postgrad.manchester.ac.uk
 # ======================================================== #
 
-# Read packages
+# Load packages
 library(ggplot2)   # >= 3.4.0 required for scale_linewidth_manual()
 library(extrafont) # Humor Sans font for xkcd theme
 
-# Read auxiliary functions
+# Load auxiliary functions
 source("R/xkcd.R")
 
 # Load extra fonts
@@ -99,7 +99,7 @@ is_val_ann   <- plotwork$is.improvement[35]
 oos_val_ann  <- plotwork$oos.improvement[35]
 oos_ref_line <- plotwork$oos.improvement[72] # ~year 1943 dashed ref
 
-# Theme XKCD
+# --- Theme XKCD ---
 theme_xkcd <- theme(
   panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.75),
   panel.background = element_rect(fill = "white"), 
@@ -111,7 +111,7 @@ theme_xkcd <- theme(
   text = element_text(size = 16, family = "Humor Sans")
 )
 
-# Plot 
+# --- Plot --- 
 plotlong |>
   tidyr::pivot_wider(names_from = "type", values_from = improvement) |>
   ggplot() +
