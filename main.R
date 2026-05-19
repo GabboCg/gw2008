@@ -30,10 +30,10 @@ dsraw <- read.csv("data/goyal-welch-a.csv")
 # to perfectly replicate GW, use ds <- subset(dsraw, dsraw$yyyy<=2005)
 ds <- within(dsraw, {
   
-    spret  <- (sp500index + sp500d12) / c(NA, head(sp500index, -1)) - 1
-    logeqp <- log(1.0 + spret - tbill / 100.0)
-    lagdp  <- c(NA, head(sp500d12, -1)) / c(NA, head(sp500index, -1))
-    
+  spret  <- (sp500index + sp500d12) / c(NA, head(sp500index, -1)) - 1
+  logeqp <- log(1.0 + spret - tbill / 100.0)
+  lagdp  <- c(NA, head(sp500d12, -1)) / c(NA, head(sp500index, -1))
+  
 })
 
 ds <- subset(ds, ds$yyyy >= 1872, select = c("yyyy", "logeqp", "lagdp"))
@@ -56,13 +56,13 @@ oos_xyresid <- oos_meanresid <- rep(NA, nrow(ds))
 
 for (i in firstyear:nrow(ds)) {
   
-    oos_meanpred <- mean(ds$logeqp[1:i])
-    oos_meanresid[i + 1] <- ds$logeqp[i + 1] - oos_meanpred
-
-    oos_lmcoef <- coef(lm(logeqp ~ lagdp, data = ds[1:i,]))
-    oos_pred <- oos_lmcoef[1] + oos_lmcoef[2] * ds$lagdp[i + 1]
-    oos_xyresid[i + 1] <- ds$logeqp[i + 1] - oos_pred
-    
+  oos_meanpred <- mean(ds$logeqp[1:i])
+  oos_meanresid[i + 1] <- ds$logeqp[i + 1] - oos_meanpred
+  
+  oos_lmcoef <- coef(lm(logeqp ~ lagdp, data = ds[1:i,]))
+  oos_pred <- oos_lmcoef[1] + oos_lmcoef[2] * ds$lagdp[i + 1]
+  oos_xyresid[i + 1] <- ds$logeqp[i + 1] - oos_pred
+  
 }
 
 # now create a plotwork-related data set
@@ -84,9 +84,9 @@ rownames(plotwork) <- NULL
 
 plotwork <- within(plotwork, {
   
-    is.improvement <- cumsum(plotwork$is_meanresid ^ 2) - cumsum( is_xyresid ^ 2)
-    oos.improvement <- cumsum(oos_meanresid ^ 2) - cumsum( oos_xyresid ^ 2)
-    
+  is.improvement <- cumsum(plotwork$is_meanresid ^ 2) - cumsum( is_xyresid ^ 2)
+  oos.improvement <- cumsum(oos_meanresid ^ 2) - cumsum( oos_xyresid ^ 2)
+  
 })
 
 plotlong <- rbind(
